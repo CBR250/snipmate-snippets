@@ -1,0 +1,17 @@
+int main()
+{
+	// open for reading and writing (append if file exists)
+    FILE *f = fopen("/tmp/${1:FileName}", "a+");
+    if (f == NULL)
+    {
+        printf("Error opening file!\n");
+        exit(1);
+    }
+
+    /* print some text */
+    const char *text = "Happy";
+    fprintf(f, "Message : %s\n", text);
+
+    fclose(f);
+}
+

@@ -1,0 +1,47 @@
+// Artistic Style is a source code indenter, formatter, and beautifier for the C, C++, C++/CLI, Objective‑C, C# and Java programming languages. 
+
+// Please install package
+// Archlinux 
+// pacman -S astyle
+astyle --convert-tabs --fill-empty-lines \
+--indent-switches \
+--style=kr --indent=spaces=4 --indent-switches --suffix=none *.[ch]  
+
+
+for f in $(find . -name '*.c' -or -name '*.cpp' -or -name '*.h' -type f); 
+do astyle --convert-tabs --fill-empty-lines --indent-switches --style=allman --indent=spaces=4 --indent-switches --suffix=none $f; 
+done;
+
+for f in $(find . -name '*.c' -or -name '*.cpp' -or -name '*.h' -type f); 
+do astyle --style=allmen --convert-tabs --fill-empty-lines --indent-switches --indent=spaces=4 --indent-switches --suffix=none $f; 
+done;
+
+for f in $(find . -name '*.c' -or -name '*.cpp' -or -name '*.h' -type f); 
+do astyle --style=k/r --convert-tabs --fill-empty-lines --indent-switches --indent=spaces=4 --indent-switches --suffix=none $f; 
+done;
+
+
+
+// --style=kr
+//              Kernighan&Ritchie style formatting/indenting.
+
+//       -d, --pad-paren-out
+//              Insert space paddings around parenthesies on the  outside  only.
+//              This can be used with unpad=paren to remove unwanted spaces.
+
+// -V, --convert-tabs
+//              Convert tabs to spaces.
+
+// -E, --fill-empty-lines
+//              Fill empty lines with the white space of their previous lines.
+
+// Reference:
+// [astyle - indentation and reformatting filters for C, C++, C#, Java](http://manpages.ubuntu.com/manpages/hardy/man1/astyle.1.html)
+
+
+
+//	--indent-switches / -S
+//		Indent 'switch' blocks so that the 'case X:' statements are indented in the switch block. The entire case block is indented. 
+
+// Reference:
+// [Artistic Style 2.05](http://astyle.sourceforge.net/astyle.html)

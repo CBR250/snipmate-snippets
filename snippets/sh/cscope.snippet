@@ -1,0 +1,9 @@
+CSCOPE_FILE_TEMP=cscope.out
+if [ -n "$${1:1}" ]; then
+    echo "Source code directory: " $${1:1}
+    echo "Create file map database : " $CSCOPE_FILE_TEMP
+    find $${1:1} -name "*.h" -or -name "*.c" -or -name "*.cpp" -or -name "*.cc" > $CSCOPE_FILE_TEMP
+    cscope -bkq -i $CSCOPE_FILE_TEMP
+else
+    echo "Please type path of project"
+fi

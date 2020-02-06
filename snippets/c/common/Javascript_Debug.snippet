@@ -1,0 +1,5 @@
+//add “Line # 999 \n” to each line in the script that you want numbered, e.g.,
+    alert ( “Line # 999 \n”);
+//run the perl below:
+    cat my_js.js | perl -ane “{ s/Line # \d+ /Line # _;}” > C_my_js.js; mv C_my_js.js my_js.js
+

@@ -1,0 +1,2 @@
+/*find multi file and delete line which contain specific word*/
+find . -name "*.c" -print0 | xargs -0 sed -i '/GOGO - Debug -/d' 
